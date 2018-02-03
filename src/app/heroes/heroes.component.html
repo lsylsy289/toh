@@ -4,11 +4,4 @@
   </li>
 </ul>
 
-<!-- 선택된 객체를 보여주는 디테일 영역 -->
-<div *ngIf="selectedHero">
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedHero.name" placeholder="이름을 입력하세요."/>
-    </label>
-  </div>
-</div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
