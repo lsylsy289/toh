@@ -18,7 +18,11 @@ export class HeroesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.heroes = this.heroService.getHeroes();
+    // 비동기 처리
+    this.heroService.getHeroes()
+      .subscribe(data => {
+        this.heroes = data;
+      });
   }
 
   onSelect(hero: Hero) {
