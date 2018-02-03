@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Hero} from '../hero';
+import {Component, OnInit} from '@angular/core';
+import {HEROES} from '../mock-heroes';
 
 @Component({
   selector: 'app-heroes',
@@ -7,10 +7,11 @@ import {Hero} from '../hero';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  hero: Hero;
+  heroes = HEROES;
 
   constructor() {
-    this.hero = new Hero(1, 'Win storm');
+    // this.heroes = HEROES;
+    // this.heroes = new Hero(1, 'Win storm');
   }
 
   ngOnInit() {
