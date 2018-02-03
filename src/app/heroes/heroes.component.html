@@ -1,11 +1,14 @@
 <ul class="heroes">
-  <li *ngFor="let hero of heroes">
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
     <span class="badge">{{hero.id}}</span>{{hero.name}}
   </li>
 </ul>
 
-<!--<div>
-  <label>name:
-    <input [(ngModel)]="heroes.name" placeholder="이름을 입력하세요." />
-  </label>
-</div>-->
+<!-- 선택된 객체를 보여주는 디테일 영역 -->
+<div *ngIf="selectedHero">
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedHero.name" placeholder="이름을 입력하세요."/>
+    </label>
+  </div>
+</div>
